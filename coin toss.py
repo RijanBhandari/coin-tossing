@@ -15,7 +15,7 @@ def cls():
 
 
 def forexit():
-    print("BYE", end="", flush=True)
+    print("BYE", end="", flush=True) # flush= true is ued to clear the output buffer defult is false
     aa = 0
     while 1:
         sleep(0.71)
@@ -37,9 +37,9 @@ def tossing():
 
 def process():
     while 1:
-        sec = ['heads', 'tails']
-        choice = random.choice(sec)
-        t1 = Thread(target=sound)
+        sec = ['heads', 'tails'] # a list
+        choice = random.choice(sec) # random.choice() selects a term from list
+        t1 = Thread(target=sound) # thread(target = ) from thereading is used to run two function at same time 
         t1.start()
         t2 = Thread(target=tossing())
         t2.start()
@@ -51,7 +51,7 @@ def process():
             print("\nTAILS")
         sleep(1.5)
         b = (input("\n\n\nPress Enter to toss again and N to exit: "))
-        b = b.upper()
+        b = b.upper() # variable.upper() to print uppercase string
         if b == 'N':
             forexit()
             break
@@ -60,7 +60,7 @@ def process():
             continue
         else:
             print("Invalid input :(\nTossing again")
-            sleep(2)
+            sleep(2) # sleep from time.sleep(parameter) is used to stop the program for given seconds
 
 
 input('Press enter to toss: ')
